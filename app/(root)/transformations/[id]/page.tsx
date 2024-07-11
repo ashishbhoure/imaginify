@@ -4,19 +4,18 @@ import Link from "next/link";
 import Header from "@/components/shared/Header";
 import TransformedImage from "@/components/shared/TransformedImage";
 import { Button } from "@/components/ui/button";
-import { getImageById } from "@/lib/actions/image.actions";
 import { getImageSize } from "@/lib/utils";
 // import { DeleteConfirmation } from "@/components/shared/DeleteConfirmation";
 import { auth } from "@clerk/nextjs/server";
+import { getImageById } from "@/lib/actions/image.actions";
 
 const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
-  debugger
+  debugger;
   const { userId } = auth();
 
   const image = await getImageById(id);
 
-  return (y
-    
+  return (
     <>
       <Header title={image.title} />
 
